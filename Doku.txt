@@ -1,0 +1,3 @@
+Vector: dynamische Tabelle
+
+thread: (fil d’exécution) est une tâche qui s’exécute en parallèle dans un programme.

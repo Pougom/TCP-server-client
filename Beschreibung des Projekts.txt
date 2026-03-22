@@ -1,0 +1,58 @@
+Programmieraufgabe: TCP‑Chat zwischen Server und bis zu 15 Clients (C#)
+
+Aufgabenbeschreibung
+
+Entwickeln Sie eine einfache Chat‑Anwendung in C#, bestehend aus einem TCP‑Server und einem TCP‑Client.
+Der Server soll bis zu 15 Clients gleichzeitig akzeptieren und Nachrichten zwischen ihnen weiterleiten.
+
+Ziele der Aufgabe
+
+Server
+
+* Öffnet einen TCP‑Listener auf einem frei wählbaren Port.
+* Akzeptiert maximal 15 gleichzeitige Client‑Verbindungen.
+* Jeder Client wird in einem eigenen Thread oder Task verarbeitet.
+* Empfängt Nachrichten von Clients und verteilt sie an alle verbundenen Clients (Broadcast).
+* Gibt im Server‑Konsolenfenster aus:• Wenn ein Client verbunden wurde
+* Wenn ein Client getrennt wurde
+* Jede empfangene Nachricht
+
+
+
+Client
+
+* Verbindet sich mit dem Server über IP und Port.
+* Sendet Nachrichten, die der Benutzer in der Konsole eingibt.
+* Empfängt Nachrichten anderer Clients und zeigt sie live an.
+* Trennt sich sauber vom Server, wenn der Benutzer „exit“ eingibt.
+
+Zusatzanforderungen
+
+* Der Server soll neue Verbindungen ablehnen, wenn bereits 15 Clients verbunden sind.
+* Der Client soll Verbindungsabbrüche erkennen und eine Meldung anzeigen.
+* Nachrichten sollen mit Zeitstempel angezeigt werden.
+* Der Server soll Thread‑sicher arbeiten (z. B. lock beim Zugriff auf die Clientliste).
+
+
+Beispielhafte Struktur (kein vollständiger Code, nur Orientierung)
+
+Server – zentrale Komponenten
+
+TcpListener listener;
+List<TcpClient> clients = new List<TcpClient>(); // max 15
+
+
+Client – zentrale Komponenten
+
+TcpClient client = new TcpClient();
+NetworkStream stream = client.GetStream();
+
+
+Was Sie am Ende haben sollten
+
+* Einen funktionierenden Konsolen‑Chat, bei dem mehrere Clients gleichzeitig schreiben können.
+* Einen Server, der stabil läuft und Verbindungen sauber verwaltet.
+* Ein gutes Verständnis für:• TCP‑Kommunikation
+* Multithreading / async‑await
+* Netzwerkstreams
+* Synchronisation zwischen Threads
