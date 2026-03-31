@@ -1,5 +1,8 @@
 #include "server.h"
 #include <iostream>
+#include <thread>
+#include <algorithm>
+#include <vector>
 
 int main() {
     int port = 5000;  // Choisis ton port

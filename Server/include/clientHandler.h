@@ -3,6 +3,9 @@
 
 #include <winsock2.h>
 #include <string>
+#include <thread>
+#include <algorithm>
+#include <vector>
 
 class Server;
 

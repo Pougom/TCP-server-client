@@ -1,13 +1,17 @@
-#include "server.h"          // Déclaration de la classe Server
-#include "clientHandler.h"   // Gestion d’un client dans un thread séparé
-#include <iostream>          // Affichage console
-
-// WinSock2 : API réseau utilisée par Windows
+// WinSock2 : API réseau utilisée par Window
 #include <winsock2.h>
 #include <ws2tcpip.h>
+#pragma comment(lib, "ws2_32.lib") // Nécessaire pour l’édition de liens sous Visual Studio
 
-// Nécessaire pour l’édition de liens sous Visual Studio
-#pragma comment(lib, "ws2_32.lib")
+#include <iostream>  // Affichage console
+#include <algorithm>
+#include <thread>
+#include <algorithm>
+#include <vector>
+
+#include "server.h"
+#include "clientHandler.h"
+
 
 // Nombre maximum de clients autorisés simultanément
 #define MAX_CLIENTS 15

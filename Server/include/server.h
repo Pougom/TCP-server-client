@@ -4,7 +4,8 @@
 // WinSock2 doit être inclus AVANT <windows.h> et avant tout autre include réseau
 #include <winsock2.h>
 #include <ws2tcpip.h>
-
+#include <thread>
+#include <algorithm>
 #include <vector>   // Stockage des sockets clients
 #include <mutex>    // Protection multi-thread
 #include <string>   // std::string
